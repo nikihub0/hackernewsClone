@@ -19,12 +19,6 @@ function App() {
       }).catch((error)=> console.log(error))
   }, [topic, page]);
 
-  const handleMinus = () => {
-    if (page === 1){
-      
-    }
-  };
-
   const searchSpace = (event) => {
     let keyword = event.target.value;
     setSearch(keyword);
@@ -54,22 +48,24 @@ function App() {
   return (
     <>
       {isLoading && (
-        <div>is loading... <FiLoader />
+        <div className="loading">is loading... <FiLoader />
         </div>
       )}
         <div className="searchbar">
           <input
             type="text"
-            placeholder="Enter item to be searched"
+            placeholder="Enter item to be searched "
             onChange={(e) => searchSpace(e)}
           />
           <button className="search" onClick={(e) => setTopic(search)}>
             Search
           </button>
-          <button className="prev" onClick={(e) => setPage(page - 1)}{page === 1 ? "" : "active"}>
+          <button className="prev" 
+          disabled={page === 1}
+          onClick={(e) => setPage(page - 1)}>
             Previous page
           </button>
-          {page}
+          <div className="page">{page}</div>
           <button className="next" onClick={(e) => setPage(page + 1)}>
             Next page
           </button>
