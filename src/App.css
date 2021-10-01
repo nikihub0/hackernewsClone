@@ -1,3 +1,6 @@
+body {
+  background-color: rgb(192, 183, 172);
+}
 .App {
   text-align: center;
 }
@@ -23,8 +26,31 @@ h1 {
 input {
   padding-right: 2rem;
   margin-right: 0.5rem;
+  border: none;
 }
 
+.loading {
+  display: flex;
+  justify-content: center;
+}
+.prev {
+  margin-left: 2rem;
+  margin-right: 0.5rem;
+  border: none;
+}
+.next {
+  margin-right: 0.5rem;
+  border: none;
+}
+.page {
+  margin-right: 0.5rem;
+  background-color: rgb(35, 226, 226);
+  padding: 1rem;
+}
+.search {
+  padding: 1rem;
+  border: none;
+}
 /* .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
